@@ -1,0 +1,13 @@
+{
+  "id" : "739a77bc-3e65-4cbf-bee3-02a10726b455",
+  "name" : "privateopen-close-credential",
+  "description" : "Credential for Private Open to Close",
+  "type" : "httpTransportSecurityAlias",
+  "owner" : "Administrator",
+  "authType" : "HTTP_BASIC",
+  "authMode" : "NEW",
+  "httpAuthCredentials" : {
+    "userName" : "privateopengateway",
+    "password" : "KioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKio="
+  }
+}

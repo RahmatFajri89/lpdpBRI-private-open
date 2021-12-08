@@ -1,0 +1,151 @@
+{
+  "apiDefinition" : {
+    "info" : {
+      "version" : "1.0",
+      "title" : "API LPDP",
+      "contact" : { }
+    },
+    "serviceRegistryDisplayName" : "lpdpBRI_1.0",
+    "tags" : [ {
+      "name" : "Misc",
+      "description" : ""
+    } ],
+    "schemes" : [ ],
+    "consumes" : [ "application/json" ],
+    "produces" : [ "application/json" ],
+    "security" : [ ],
+    "paths" : {
+      "/paymentposting" : {
+        "post" : {
+          "tags" : [ "Misc" ],
+          "summary" : "Create Data",
+          "operationId" : "CreateData",
+          "consumes" : [ "application/json" ],
+          "produces" : [ "application/json" ],
+          "parameters" : [ {
+            "name" : "Content-Type",
+            "in" : "header",
+            "description" : "",
+            "required" : true,
+            "type" : "string",
+            "parameterSchema" : {
+              "type" : "string",
+              "description" : "",
+              "readOnly" : false
+            }
+          }, {
+            "name" : "BRI-Signature",
+            "in" : "header",
+            "description" : "",
+            "required" : true,
+            "type" : "string",
+            "parameterSchema" : {
+              "type" : "string",
+              "description" : "",
+              "readOnly" : false
+            }
+          }, {
+            "name" : "BRI-Timestamp",
+            "in" : "header",
+            "description" : "",
+            "required" : true,
+            "type" : "string",
+            "parameterSchema" : {
+              "type" : "string",
+              "description" : "",
+              "readOnly" : false
+            }
+          } ],
+          "responses" : {
+            "200" : {
+              "description" : "",
+              "content" : { },
+              "links" : { },
+              "schema" : { },
+              "examples" : { },
+              "headers" : { }
+            }
+          },
+          "mockedResponses" : { },
+          "mockedConditionsBasedCustomResponsesList" : [ ],
+          "enabled" : true,
+          "scopes" : [ ],
+          "requestBody" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CreateDataRequest"
+                },
+                "examples" : { }
+              }
+            },
+            "name" : "CreateData"
+          }
+        },
+        "scopes" : [ ],
+        "displayName" : "/paymentposting",
+        "enabled" : true
+      }
+    },
+    "securityDefinitions" : { },
+    "definitions" : { },
+    "parameters" : { },
+    "baseUriParameters" : [ ],
+    "externalDocs" : [ ],
+    "servers" : [ {
+      "url" : "${api-close-gateway-url}",
+      "variables" : { }
+    } ],
+    "components" : {
+      "schemas" : {
+        "CreateDataRequest" : {
+          "type" : "gateway",
+          "schema" : "{\"required\":[\"REQUEST\"],\"type\":\"object\",\"properties\":{\"REQUEST\":{\"$ref\":\"#/components/schemas/REQUEST\"}},\"example\":\"{\\\"REQUEST\\\":{\\\"ID_BILLING\\\":\\\"202100000001\\\",\\\"PAYMENT_METHODE\\\":\\\"0\\\",\\\"NAMA_PENERIMA\\\":\\\"Kewpie\\\",\\\"NOREK_PENERIMA\\\":\\\"97846553344888\\\",\\\"NAMA_BANK_PENERIMA\\\":\\\"Bank Of America, N.A.\\\",\\\"KODE_BANK_PENERIMA\\\":\\\"BOFAUS3MXXX\\\",\\\"KODE_IBAN_BANK_PENERIMA\\\":\\\"97846553344888\\\",\\\"ALAMAT_BANK_PENERIMA\\\":\\\"NationsBank Towe 100 South East 2nd Street\\\",\\\"KODE_NEGARA_PENERIMA\\\":\\\"US\\\",\\\"NAMA_NEGARA_PENERIMA\\\":\\\"Unitd States\\\",\\\"EMAIL_PENERIMA\\\":\\\"Kewpie@gmail.com\\\",\\\"REMARK_TRANSAKSI\\\":\\\"Living Allowance\\\",\\\"KURS_TRANSAKSI\\\":\\\"USD\\\",\\\"NOMINAL_TRANSAKSI\\\":\\\"100.00\\\",\\\"TANGGAL_TRANSAKSI\\\":\\\"2021-09-20T00:00:00.000+0000\\\",\\\"JENIS_PEMBAYARAN\\\":\\\"0\\\"}}\"}"
+        },
+        "REQUEST" : {
+          "type" : "gateway",
+          "schema" : "{\"required\":[\"JENIS_PEMBAYARAN\",\"NOMINAL_TRANSAKSI\",\"NAMA_BANK_PENERIMA\",\"KURS_TRANSAKSI\",\"KODE_IBAN_BANK_PENERIMA\",\"KODE_BANK_PENERIMA\",\"PAYMENT_METHODE\",\"NAMA_NEGARA_PENERIMA\",\"NOREK_PENERIMA\",\"ALAMAT_BANK_PENERIMA\",\"EMAIL_PENERIMA\",\"ID_BILLING\",\"REMARK_TRANSAKSI\",\"TANGGAL_TRANSAKSI\",\"NAMA_PENERIMA\",\"KODE_NEGARA_PENERIMA\"],\"type\":\"object\",\"properties\":{\"ALAMAT_BANK_PENERIMA\":{\"type\":\"string\"},\"EMAIL_PENERIMA\":{\"type\":\"string\"},\"ID_BILLING\":{\"type\":\"string\"},\"JENIS_PEMBAYARAN\":{\"type\":\"string\"},\"KODE_BANK_PENERIMA\":{\"type\":\"string\"},\"KODE_IBAN_BANK_PENERIMA\":{\"type\":\"string\"},\"KODE_NEGARA_PENERIMA\":{\"type\":\"string\"},\"KURS_TRANSAKSI\":{\"type\":\"string\"},\"NAMA_BANK_PENERIMA\":{\"type\":\"string\"},\"NAMA_NEGARA_PENERIMA\":{\"type\":\"string\"},\"NAMA_PENERIMA\":{\"type\":\"string\"},\"NOMINAL_TRANSAKSI\":{\"type\":\"string\"},\"NOREK_PENERIMA\":{\"type\":\"string\"},\"PAYMENT_METHODE\":{\"type\":\"string\"},\"REMARK_TRANSAKSI\":{\"type\":\"string\"},\"TANGGAL_TRANSAKSI\":{\"type\":\"string\"}},\"example\":\"{\\\"ID_BILLING\\\":\\\"202100000001\\\",\\\"PAYMENT_METHODE\\\":\\\"0\\\",\\\"NAMA_PENERIMA\\\":\\\"Kewpie\\\",\\\"NOREK_PENERIMA\\\":\\\"97846553344888\\\",\\\"NAMA_BANK_PENERIMA\\\":\\\"Bank Of America, N.A.\\\",\\\"KODE_BANK_PENERIMA\\\":\\\"BOFAUS3MXXX\\\",\\\"KODE_IBAN_BANK_PENERIMA\\\":\\\"97846553344888\\\",\\\"ALAMAT_BANK_PENERIMA\\\":\\\"NationsBank Towe 100 South East 2nd Street\\\",\\\"KODE_NEGARA_PENERIMA\\\":\\\"US\\\",\\\"NAMA_NEGARA_PENERIMA\\\":\\\"Unitd States\\\",\\\"EMAIL_PENERIMA\\\":\\\"Kewpie@gmail.com\\\",\\\"REMARK_TRANSAKSI\\\":\\\"Living Allowance\\\",\\\"KURS_TRANSAKSI\\\":\\\"USD\\\",\\\"NOMINAL_TRANSAKSI\\\":\\\"100.00\\\",\\\"TANGGAL_TRANSAKSI\\\":\\\"2021-09-20T00:00:00.000+0000\\\",\\\"JENIS_PEMBAYARAN\\\":\\\"0\\\"}\"}"
+        }
+      },
+      "responses" : { },
+      "parameters" : { },
+      "examples" : { },
+      "requestBodies" : { },
+      "headers" : { },
+      "links" : { },
+      "callbacks" : { }
+    },
+    "type" : "rest"
+  },
+  "nativeEndpoint" : [ {
+    "passSecurityHeaders" : true,
+    "uri" : "${api-close-gateway-url}",
+    "connectionTimeoutDuration" : 0,
+    "alias" : false
+  } ],
+  "apiName" : "lpdpBRI",
+  "apiVersion" : "1.0",
+  "apiDescription" : "lpdp payment request\n",
+  "maturityState" : "Beta",
+  "isActive" : true,
+  "type" : "REST",
+  "owner" : "Administrator",
+  "policies" : [ "cf7bde9b-e7f0-4aeb-8a6f-5100c68f8609" ],
+  "referencedFiles" : {
+    "API LPDP.yaml" : "swagger: '2.0'\ninfo:\n  version: '1.0'\n  title: API LPDP\n  contact: {}\nhost: 10.35.65.148:6001\nbasePath: /invoke\nschemes:\n- http\nconsumes:\n- application/json\nproduces:\n- application/json\npaths:\n  /apiLPDP.services.v1:createData:\n    post:\n      summary: Create Data\n      tags:\n      - Misc\n      operationId: CreateData\n      deprecated: false\n      produces:\n      - application/json\n      consumes:\n      - application/json\n      parameters:\n      - name: Content-Type\n        in: header\n        required: true\n        type: string\n        description: ''\n      - name: X-ESB-EXTERNAL_ID\n        in: header\n        required: true\n        type: integer\n        format: int32\n        description: ''\n      - name: X-ESB-CHANNEL_ID\n        in: header\n        required: true\n        type: string\n        description: ''\n      - name: X-ESB-SERVICE_ID\n        in: header\n        required: true\n        type: string\n        description: ''\n      - name: Body\n        in: body\n        required: true\n        description: ''\n        schema:\n          $ref: '#/definitions/CreateDataRequest'\n      responses:\n        '200':\n          description: ''\n          headers: {}\ndefinitions:\n  CreateDataRequest:\n    title: CreateDataRequest\n    example:\n      REQUEST:\n        ID_BILLING: '202100000001'\n        PAYMENT_METHODE: '0'\n        NAMA_PENERIMA: Kewpie\n        NOREK_PENERIMA: '97846553344888'\n        NAMA_BANK_PENERIMA: Bank Of America, N.A.\n        KODE_BANK_PENERIMA: BOFAUS3MXXX\n        KODE_IBAN_BANK_PENERIMA: '97846553344888'\n        ALAMAT_BANK_PENERIMA: NationsBank Towe 100 South East 2nd Street\n        KODE_NEGARA_PENERIMA: US\n        NAMA_NEGARA_PENERIMA: Unitd States\n        EMAIL_PENERIMA: Kewpie@gmail.com\n        REMARK_TRANSAKSI: Living Allowance\n        KURS_TRANSAKSI: USD\n        NOMINAL_TRANSAKSI: '100.00'\n        TANGGAL_TRANSAKSI: 2021-09-20\n        JENIS_PEMBAYARAN: '0'\n    type: object\n    properties:\n      REQUEST:\n        $ref: '#/definitions/REQUEST'\n    required:\n    - REQUEST\n  REQUEST:\n    title: REQUEST\n    example:\n      ID_BILLING: '202100000001'\n      PAYMENT_METHODE: '0'\n      NAMA_PENERIMA: Kewpie\n      NOREK_PENERIMA: '97846553344888'\n      NAMA_BANK_PENERIMA: Bank Of America, N.A.\n      KODE_BANK_PENERIMA: BOFAUS3MXXX\n      KODE_IBAN_BANK_PENERIMA: '97846553344888'\n      ALAMAT_BANK_PENERIMA: NationsBank Towe 100 South East 2nd Street\n      KODE_NEGARA_PENERIMA: US\n      NAMA_NEGARA_PENERIMA: Unitd States\n      EMAIL_PENERIMA: Kewpie@gmail.com\n      REMARK_TRANSAKSI: Living Allowance\n      KURS_TRANSAKSI: USD\n      NOMINAL_TRANSAKSI: '100.00'\n      TANGGAL_TRANSAKSI: 2021-09-20\n      JENIS_PEMBAYARAN: '0'\n    type: object\n    properties:\n      ID_BILLING:\n        type: string\n      PAYMENT_METHODE:\n        type: string\n      NAMA_PENERIMA:\n        type: string\n      NOREK_PENERIMA:\n        type: string\n      NAMA_BANK_PENERIMA:\n        type: string\n      KODE_BANK_PENERIMA:\n        type: string\n      KODE_IBAN_BANK_PENERIMA:\n        type: string\n      ALAMAT_BANK_PENERIMA:\n        type: string\n      KODE_NEGARA_PENERIMA:\n        type: string\n      NAMA_NEGARA_PENERIMA:\n        type: string\n      EMAIL_PENERIMA:\n        type: string\n      REMARK_TRANSAKSI:\n        type: string\n      KURS_TRANSAKSI:\n        type: string\n      NOMINAL_TRANSAKSI:\n        type: string\n      TANGGAL_TRANSAKSI:\n        type: string\n      JENIS_PEMBAYARAN:\n        type: string\n    required:\n    - ID_BILLING\n    - PAYMENT_METHODE\n    - NAMA_PENERIMA\n    - NOREK_PENERIMA\n    - NAMA_BANK_PENERIMA\n    - KODE_BANK_PENERIMA\n    - KODE_IBAN_BANK_PENERIMA\n    - ALAMAT_BANK_PENERIMA\n    - KODE_NEGARA_PENERIMA\n    - NAMA_NEGARA_PENERIMA\n    - EMAIL_PENERIMA\n    - REMARK_TRANSAKSI\n    - KURS_TRANSAKSI\n    - NOMINAL_TRANSAKSI\n    - TANGGAL_TRANSAKSI\n    - JENIS_PEMBAYARAN\ntags:\n- name: Misc\n  description: ''\n"
+  },
+  "tracingEnabled" : false,
+  "scopes" : [ ],
+  "publishedPortals" : [ ],
+  "creationDate" : "2021-09-22 07:23:47 GMT",
+  "lastModified" : "2021-11-01 17:49:16 GMT",
+  "systemVersion" : 1,
+  "portalApiItemIdentifier" : "c.restObject.API-Portal.iyi6oSUBEexLlABQVqrl9A.-1",
+  "gatewayEndpoints" : {
+    "lpdpBRI" : "lpdpBRI"
+  },
+  "deployments" : [ ],
+  "microgatewayEndpoints" : [ ],
+  "appMeshEndpoints" : [ ],
+  "id" : "d2637eec-d425-4b22-816f-4c1ea3100d6f"
+}

@@ -1,0 +1,22 @@
+{
+  "id" : "ad6da29a-2bf7-4aa3-aa38-f72532a2c4e4",
+  "names" : [ {
+    "value" : "Outbound Auth - Transport",
+    "locale" : "en"
+  } ],
+  "templateKey" : "outboundTransportAuthentication",
+  "parameters" : [ {
+    "templateKey" : "transportSecurity",
+    "parameters" : [ {
+      "templateKey" : "authType",
+      "values" : [ "ALIAS" ]
+    }, {
+      "templateKey" : "authMode",
+      "values" : [ "NEW" ]
+    }, {
+      "templateKey" : "alias",
+      "values" : [ "${privateopen-close-credential}" ]
+    } ]
+  } ],
+  "active" : false
+}

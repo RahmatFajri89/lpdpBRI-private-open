@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<asset_composite name="APIGatewayAssets" displayName="Assets for API Gateway" runtimeVersion="10.11" targetNamespace="http://namespaces.softwareag.com/webMethods/APIGateway" xmlns="http://namespaces.softwareag.com/acdl/1.0" xmlns:EDA="http://namespaces.softwareag.com/webMethods/EDA" xmlns:MWS="http://namespaces.softwareag.com/webMethods/MWS" xmlns:IS="http://namespaces.softwareag.com/webMethods/IS" xmlns:APIPORTAL="http://namespaces.softwareag.com/webMethods/APIPORTAL" xmlns:AgileApps="http://namespaces.softwareag.com/webMethods/AgileApps" xmlns:BROKER="http://namespaces.softwareag.com/webMethods/BROKER" xmlns:implDetails="http://namespaces.softwareag.com/acdl/implDetails" xmlns:UniversalMessaging="http://namespaces.softwareag.com/webMethods/UniversalMessaging" xmlns:TN="http://namespaces.softwareag.com/webMethods/TN" xmlns:RULES="http://namespaces.softwareag.com/webMethods/RULES" xmlns:BPM="http://namespaces.softwareag.com/webMethods/BPM" xmlns:Optimize="http://namespaces.softwareag.com/webMethods/Optimize">
+    <buildInfo name="BuildTimestamp" value="2021-12-08T11:45:30"/>
+    <asset name="API.d2637eec-d425-4b22-816f-4c1ea3100d6f" displayName="lpdpBRI[1.0]" isDeployable="true">
+        <implementation.generic type="API"/>
+        <dependsOn>APIGateway:AccessControlList.ef35ea26-ebea-40e2-ba6a-486b5cde54d5</dependsOn>
+        <dependsOn>APIGateway:Policy.cf7bde9b-e7f0-4aeb-8a6f-5100c68f8609</dependsOn>
+    </asset>
+    <asset name="Policy.cf7bde9b-e7f0-4aeb-8a6f-5100c68f8609" displayName="Policy For API lpdpBRI[1.0]" isDeployable="true">
+        <implementation.generic type="Policy"/>
+        <dependsOn>APIGateway:PolicyAction.28fe75b6-2dfd-4197-a30d-cebe812527b9</dependsOn>
+        <dependsOn>APIGateway:PolicyAction.3fc3a2ca-a3c4-40eb-986b-167242796d9f</dependsOn>
+        <dependsOn>APIGateway:PolicyAction.60a4e143-e502-42ac-9956-fd213e08d990</dependsOn>
+        <dependsOn>APIGateway:PolicyAction.7ed26845-6ec1-498f-82d8-c859eda371b1</dependsOn>
+        <dependsOn>APIGateway:PolicyAction.ad6da29a-2bf7-4aa3-aa38-f72532a2c4e4</dependsOn>
+        <dependsOn>APIGateway:PolicyAction.c1941cce-af63-4ee5-8848-abf5100c664d</dependsOn>
+        <dependsOn>APIGateway:PolicyAction.edc9ea58-bb3b-4935-88c9-9005a0276d42</dependsOn>
+        <dependsOn>APIGateway:PolicyAction.f0a0cb8b-bcb6-42c7-bcf8-3ef2328927a8</dependsOn>
+    </asset>
+    <asset name="PolicyAction.28fe75b6-2dfd-4197-a30d-cebe812527b9" displayName="Policy Action [Request Transformation] -&gt; Policy For API lpdpBRI[1.0]" isDeployable="true">
+        <implementation.generic type="PolicyAction"/>
+        <dependsOn>APIGateway:Alias.065edc58-eeb3-41c6-9665-8b194eb1a099</dependsOn>
+        <dependsOn>APIGateway:Alias.d843d000-80ce-422a-91db-1b1299fc2e90</dependsOn>
+    </asset>
+    <asset name="Alias.065edc58-eeb3-41c6-9665-8b194eb1a099" displayName="api-esb-channel-id" isDeployable="true">
+        <implementation.generic type="Alias"/>
+        <property name="value for Simple alias api-esb-channel-id" many="false" isSecure="false" displayName="value for Simple alias api-esb-channel-id">
+            <value>APIGW</value>
+        </property>
+    </asset>
+    <asset name="Alias.d843d000-80ce-422a-91db-1b1299fc2e90" displayName="api-esb-service-id" isDeployable="true">
+        <implementation.generic type="Alias"/>
+        <property name="value for Simple alias api-esb-service-id" many="false" isSecure="false" displayName="value for Simple alias api-esb-service-id">
+            <value>PO01</value>
+        </property>
+    </asset>
+    <asset name="PolicyAction.3fc3a2ca-a3c4-40eb-986b-167242796d9f" displayName="Policy Action [Straight Through Routing] -&gt; Policy For API lpdpBRI[1.0]" isDeployable="true">
+        <implementation.generic type="PolicyAction"/>
+        <dependsOn>APIGateway:Alias.56ae7631-c4e2-4cdb-a047-8494314b851e</dependsOn>
+    </asset>
+    <asset name="Alias.56ae7631-c4e2-4cdb-a047-8494314b851e" displayName="api-close-gateway-url" isDeployable="true">
+        <implementation.generic type="Alias"/>
+        <property name="Endpoint URI for Endpoint alias api-close-gateway-url" many="false" isSecure="false" displayName="Endpoint URI for Endpoint alias api-close-gateway-url">
+            <value>http://api.close.dev.bri.co.id:5557</value>
+        </property>
+        <property name="Optimization technique for Endpoint alias api-close-gateway-url" many="false" isSecure="false" displayName="Optimization technique for Endpoint alias api-close-gateway-url">
+            <value>None</value>
+        </property>
+        <property name="Connection timeout for Endpoint alias api-close-gateway-url" many="false" isSecure="false" displayName="Connection timeout for Endpoint alias api-close-gateway-url">
+            <value>32</value>
+        </property>
+        <property name="Read timeout for Endpoint alias api-close-gateway-url" many="false" isSecure="false" displayName="Read timeout for Endpoint alias api-close-gateway-url">
+            <value>32</value>
+        </property>
+        <property name="Pass WS-Security Headers for Endpoint alias api-close-gateway-url" many="false" isSecure="false" displayName="Pass WS-Security Headers for Endpoint alias api-close-gateway-url">
+            <value>false</value>
+        </property>
+    </asset>
+    <asset name="PolicyAction.ad6da29a-2bf7-4aa3-aa38-f72532a2c4e4" displayName="Policy Action [Outbound Auth - Transport] -&gt; Policy For API lpdpBRI[1.0]" isDeployable="true">
+        <implementation.generic type="PolicyAction"/>
+        <dependsOn>APIGateway:Alias.739a77bc-3e65-4cbf-bee3-02a10726b455</dependsOn>
+    </asset>
+    <asset name="Alias.739a77bc-3e65-4cbf-bee3-02a10726b455" displayName="privateopen-close-credential" isDeployable="true">
+        <implementation.generic type="Alias"/>
+        <dependsOn>APIGateway:PassmanData.HTTP_AUTH_OUTBOUND_CLIENT_PWDprivateopen-close-credential</dependsOn>
+        <property name="Username for HTTP Transport Security Alias privateopen-close-credential" many="false" isSecure="false" displayName="Username for HTTP Transport Security Alias privateopen-close-credential">
+            <value>privateopengateway</value>
+        </property>
+        <property name="Password for HTTP Transport Security Alias privateopen-close-credential" many="false" isSecure="true" displayName="Password for HTTP Transport Security Alias privateopen-close-credential">
+            <value>{AES}vDt83fIfdPbOEh8vBitePrw7fN3yH3T2zhIfLwYrXj5pitcLjd1NawNQdFYbmaFM</value>
+        </property>
+    </asset>
+    <asset name="PassmanData.HTTP_AUTH_OUTBOUND_CLIENT_PWDprivateopen-close-credential" displayName="HTTP_AUTH_OUTBOUND_CLIENT_PWDprivateopen-close-credential" isDeployable="true">
+        <implementation.generic type="PassmanData"/>
+    </asset>
+    <asset name="PolicyAction.60a4e143-e502-42ac-9956-fd213e08d990" displayName="Policy Action [Log Invocation] -&gt; Policy For API lpdpBRI[1.0]" isDeployable="true">
+        <implementation.generic type="PolicyAction"/>
+    </asset>
+    <asset name="PolicyAction.f0a0cb8b-bcb6-42c7-bcf8-3ef2328927a8" displayName="Policy Action [Identify &amp; Authorize] -&gt; Policy For API lpdpBRI[1.0]" isDeployable="true">
+        <implementation.generic type="PolicyAction"/>
+    </asset>
+    <asset name="PolicyAction.7ed26845-6ec1-498f-82d8-c859eda371b1" displayName="Policy Action [Conditional Error Processing] -&gt; Policy For API lpdpBRI[1.0]" isDeployable="true">
+        <implementation.generic type="PolicyAction"/>
+    </asset>
+    <asset name="PolicyAction.edc9ea58-bb3b-4935-88c9-9005a0276d42" displayName="Policy Action [Conditional Error Processing] -&gt; Policy For API lpdpBRI[1.0]" isDeployable="true">
+        <implementation.generic type="PolicyAction"/>
+    </asset>
+    <asset name="PolicyAction.c1941cce-af63-4ee5-8848-abf5100c664d" displayName="Policy Action [Enable HTTP / HTTPS] -&gt; Policy For API lpdpBRI[1.0]" isDeployable="true">
+        <implementation.generic type="PolicyAction"/>
+    </asset>
+    <asset name="AccessControlList.ef35ea26-ebea-40e2-ba6a-486b5cde54d5" displayName="AccessControlList for asset : lpdpBRI" isDeployable="true">
+        <implementation.generic type="AccessControlList"/>
+        <dependsOn>APIGateway:AccessProfile.146f13e4-87cd-4187-8547-08facece83a0</dependsOn>
+        <dependsOn>APIGateway:AccessProfile.Administrators</dependsOn>
+    </asset>
+    <asset name="AccessProfile.Administrators" displayName="Administrators" isDeployable="true">
+        <implementation.generic type="AccessProfile"/>
+    </asset>
+    <asset name="AccessProfile.146f13e4-87cd-4187-8547-08facece83a0" displayName="LPDP-API-Developer" isDeployable="true">
+        <implementation.generic type="AccessProfile"/>
+    </asset>
+</asset_composite>

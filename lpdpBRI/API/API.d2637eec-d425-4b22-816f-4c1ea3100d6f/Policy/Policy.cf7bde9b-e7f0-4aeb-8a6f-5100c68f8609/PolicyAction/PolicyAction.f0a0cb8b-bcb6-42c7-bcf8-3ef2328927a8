@@ -1,0 +1,25 @@
+{
+  "id" : "f0a0cb8b-bcb6-42c7-bcf8-3ef2328927a8",
+  "names" : [ {
+    "value" : "Identify & Authorize",
+    "locale" : "en"
+  } ],
+  "templateKey" : "evaluatePolicy",
+  "parameters" : [ {
+    "templateKey" : "logicalConnector",
+    "values" : [ "OR" ]
+  }, {
+    "templateKey" : "allowAnonymous",
+    "values" : [ "false" ]
+  }, {
+    "templateKey" : "IdentificationRule",
+    "parameters" : [ {
+      "templateKey" : "applicationLookup",
+      "values" : [ "strict" ]
+    }, {
+      "templateKey" : "identificationType",
+      "values" : [ "oAuth2Token" ]
+    } ]
+  } ],
+  "active" : false
+}

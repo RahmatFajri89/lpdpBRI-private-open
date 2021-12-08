@@ -1,0 +1,15 @@
+{
+  "id" : "56ae7631-c4e2-4cdb-a047-8494314b851e",
+  "name" : "api-close-gateway-url",
+  "description" : "Close API Gateway URL",
+  "type" : "endpoint",
+  "owner" : "Administrator",
+  "endPointURI" : "http://api.close.dev.bri.co.id:5557",
+  "connectionTimeout" : 32,
+  "readTimeout" : 32,
+  "suspendDurationOnFailure" : 0,
+  "optimizationTechnique" : "None",
+  "passSecurityHeaders" : false,
+  "keystoreAlias" : "",
+  "truststoreAlias" : ""
+}

@@ -1,0 +1,12 @@
+{
+  "id" : "146f13e4-87cd-4187-8547-08facece83a0",
+  "name" : "LPDP-API-Developer",
+  "description" : "Teams for LPDP API",
+  "privilege" : [ 0, 1, 2, 3, 8, 9, 10 ],
+  "groupIds" : [ "9e0a2127-64d2-4884-bb4d-30cf49df7d81" ],
+  "systemDefined" : false,
+  "teamAdmin" : {
+    "userIds" : [ ],
+    "groupIds" : [ ]
+  }
+}

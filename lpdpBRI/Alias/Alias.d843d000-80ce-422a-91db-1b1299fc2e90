@@ -1,0 +1,8 @@
+{
+  "id" : "d843d000-80ce-422a-91db-1b1299fc2e90",
+  "name" : "api-esb-service-id",
+  "description" : "API to ESB Service ID",
+  "type" : "simple",
+  "owner" : "Administrator",
+  "value" : "PO01"
+}

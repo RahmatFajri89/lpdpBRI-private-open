@@ -1,0 +1,64 @@
+{
+  "id" : "28fe75b6-2dfd-4197-a30d-cebe812527b9",
+  "names" : [ {
+    "value" : "Request Transformation",
+    "locale" : "en"
+  } ],
+  "templateKey" : "requestTransformation",
+  "parameters" : [ {
+    "templateKey" : "transformationConditions",
+    "parameters" : [ {
+      "templateKey" : "logicalConnector",
+      "values" : [ "OR" ]
+    } ]
+  }, {
+    "templateKey" : "requestTransformationConfiguration",
+    "parameters" : [ {
+      "templateKey" : "commonTransformation",
+      "parameters" : [ {
+        "templateKey" : "addOrModify",
+        "parameters" : [ {
+          "templateKey" : "transformationVariable",
+          "values" : [ "${request.headers.X-ESB-EXTERNAL_ID}" ]
+        }, {
+          "templateKey" : "transformationValue",
+          "values" : [ "${request.correlationID}" ]
+        } ]
+      }, {
+        "templateKey" : "addOrModify",
+        "parameters" : [ {
+          "templateKey" : "transformationVariable",
+          "values" : [ "${request.headers.X-ESB-CHANNEL_ID}" ]
+        }, {
+          "templateKey" : "transformationValue",
+          "values" : [ "${api-esb-channel-id}" ]
+        } ]
+      }, {
+        "templateKey" : "addOrModify",
+        "parameters" : [ {
+          "templateKey" : "transformationVariable",
+          "values" : [ "${request.headers.X-ESB-SERVICE_ID}" ]
+        }, {
+          "templateKey" : "transformationValue",
+          "values" : [ "${api-esb-service-id}" ]
+        } ]
+      }, {
+        "templateKey" : "remove",
+        "values" : [ "${request.headers.BRI-Timestamp}", "${request.headers.BRI-Signature}", "${request.headers.BRI-X-Application-ID}", "${request.headers.BRI-X-Authorization}", "${request.headers.BRI-X-Client-ID}" ]
+      } ]
+    }, {
+      "templateKey" : "methodTransformation",
+      "parameters" : [ {
+        "templateKey" : "method",
+        "values" : [ "CUSTOM" ]
+      } ]
+    }, {
+      "templateKey" : "payloadTransformation",
+      "parameters" : [ {
+        "templateKey" : "payload",
+        "values" : [ "" ]
+      } ]
+    } ]
+  } ],
+  "active" : false
+}

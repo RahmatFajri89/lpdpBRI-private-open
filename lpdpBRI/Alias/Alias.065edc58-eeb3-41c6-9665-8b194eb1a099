@@ -1,0 +1,8 @@
+{
+  "id" : "065edc58-eeb3-41c6-9665-8b194eb1a099",
+  "name" : "api-esb-channel-id",
+  "description" : "API to ESB Channel ID",
+  "type" : "simple",
+  "owner" : "Administrator",
+  "value" : "APIGW"
+}

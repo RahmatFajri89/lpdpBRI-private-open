@@ -1,0 +1,37 @@
+{
+  "id" : "edc9ea58-bb3b-4935-88c9-9005a0276d42",
+  "names" : [ {
+    "value" : "Conditional Error Processing",
+    "locale" : "en"
+  } ],
+  "templateKey" : "conditionalErrorProcessing",
+  "parameters" : [ {
+    "templateKey" : "transformationConditions",
+    "parameters" : [ {
+      "templateKey" : "logicalConnector",
+      "values" : [ "AND" ]
+    } ]
+  }, {
+    "templateKey" : "errorTransformationConfiguration",
+    "parameters" : [ {
+      "templateKey" : "customFailureMessages",
+      "parameters" : [ {
+        "templateKey" : "sendNativeProviderFault",
+        "values" : [ "false" ]
+      }, {
+        "templateKey" : "failureMessage",
+        "parameters" : [ {
+          "templateKey" : "contentType",
+          "values" : [ "json" ]
+        }, {
+          "templateKey" : "errortemplate",
+          "values" : [ "{\r\n    \"response\":{\r\n        \"error_code\":\"APL-99\",\r\n        \"response_code\":\"99\",\r\n        \"response_message\":\"${ERROR_MESSAGE}\",\r\n        \"id_billing\":${request.payload.jsonPath[$.request.id_billing]}\r\n    }\r\n}" ]
+        }, {
+          "templateKey" : "useAsDefault",
+          "values" : [ "true" ]
+        } ]
+      } ]
+    } ]
+  } ],
+  "active" : false
+}

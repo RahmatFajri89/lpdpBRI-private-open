@@ -1,0 +1,70 @@
+{
+  "id" : "7ed26845-6ec1-498f-82d8-c859eda371b1",
+  "names" : [ {
+    "value" : "Conditional Error Processing",
+    "locale" : "en"
+  } ],
+  "templateKey" : "conditionalErrorProcessing",
+  "parameters" : [ {
+    "templateKey" : "transformationConditions",
+    "parameters" : [ {
+      "templateKey" : "logicalConnector",
+      "values" : [ "AND" ]
+    }, {
+      "templateKey" : "transformationCondition",
+      "parameters" : [ {
+        "templateKey" : "transformationVariable",
+        "values" : [ "${response.statusCode}" ]
+      }, {
+        "templateKey" : "transformationConditionOperator",
+        "values" : [ "equals" ]
+      }, {
+        "templateKey" : "transformationConditionValue",
+        "values" : [ "500" ]
+      } ]
+    }, {
+      "templateKey" : "transformationCondition",
+      "parameters" : [ {
+        "templateKey" : "transformationVariable",
+        "values" : [ "${ERROR_MESSAGE}" ]
+      }, {
+        "templateKey" : "transformationConditionOperator",
+        "values" : [ "contains" ]
+      }, {
+        "templateKey" : "transformationConditionValue",
+        "values" : [ "Signature is not valid" ]
+      } ]
+    } ]
+  }, {
+    "templateKey" : "errorTransformationConfiguration",
+    "parameters" : [ {
+      "templateKey" : "statusTransformation",
+      "parameters" : [ {
+        "templateKey" : "statusCodeOptional",
+        "values" : [ "401" ]
+      }, {
+        "templateKey" : "statusMessage",
+        "values" : [ "Unauthorized" ]
+      } ]
+    }, {
+      "templateKey" : "customFailureMessages",
+      "parameters" : [ {
+        "templateKey" : "sendNativeProviderFault",
+        "values" : [ "false" ]
+      }, {
+        "templateKey" : "failureMessage",
+        "parameters" : [ {
+          "templateKey" : "contentType",
+          "values" : [ "json" ]
+        }, {
+          "templateKey" : "errortemplate",
+          "values" : [ "{\r\n    \"response\":{\r\n        \"error_code\":\"APL-99\",\r\n        \"response_code\":\"99\",\r\n        \"response_message\":\"${ERROR_MESSAGE}\",\r\n        \"id_billing\":${request.payload.jsonPath[$.request.id_billing]}\r\n    }\r\n}" ]
+        }, {
+          "templateKey" : "useAsDefault",
+          "values" : [ "true" ]
+        } ]
+      } ]
+    } ]
+  } ],
+  "active" : false
+}
